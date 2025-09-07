@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm, PasswordForm
 from django.contrib import messages
 from .models import VaultEntry
-
+    
 def home(request):
 
     features = {
