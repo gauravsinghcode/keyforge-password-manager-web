@@ -1,0 +1,384 @@
+<!-- {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyForge</title>
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+</head>
+<body>
+
+  <div class="cursor"></div>
+
+    <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+    </div>
+
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape" style="font-size: 2rem;">⚡</div>
+            <div class="shape" style="font-size: 1.5rem;">🚀</div>
+            <div class="shape" style="font-size: 2.5rem;">💻</div>
+            <div class="shape" style="font-size: 2rem;">🔥</div>
+            <div class="shape" style="font-size: 1.8rem;">✨</div>
+            <div class="shape" style="font-size: 2.2rem;">🎯</div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-greeting">Hello, I'm</div>
+            <h1 class="hero-name">Gaurav Singh</h1>
+            <p class="hero-title">Full Stack Developer & BTech Student</p>
+            <p class="hero-description">
+                Passionate 3rd-year BTech student crafting innovative solutions with Python, Django, and modern web technologies. 
+                Turning ideas into powerful applications that solve real-world problems.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Passionate developer on a journey to create impactful technology solutions</p>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <div class="profile-card">
+                    <div class="profile-avatar">👨‍💻</div>
+                    <h3>Gaurav Singh</h3>
+                    <p>BTech Student</p>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>
+                    I'm a <span class="about-highlight">3rd-year BTech student</span> with an insatiable curiosity for technology and problem-solving. 
+                    My journey in software development began with a fascination for creating applications that make life easier and more efficient.
+                </p>
+                <br>
+                <p>
+                    Specializing in <span class="about-highlight">Python development</span> and <span class="about-highlight">Django frameworks</span>, 
+                    I've built several full-featured applications including GUI-based tools like KeyForge Password Manager, ScrollCraft Text Editor, 
+                    and StormSense Weather App. Each project represents my commitment to combining functionality with exceptional user experience.
+                </p>
+                <br>
+                <p>
+                    I'm actively preparing for <span class="about-highlight">placement opportunities</span> and excited to contribute my skills 
+                    to innovative teams that value creativity, technical excellence, and continuous learning.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">A comprehensive toolkit for building modern applications</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <span class="skill-icon">🐍</span>
+                <h3>Backend Development</h3>
+                <p>Building robust server-side applications</p>
+                <div class="skill-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">SQLite</span>
+                    <span class="skill-tag">API Development</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <span class="skill-icon">🎨</span>
+                <h3>Frontend Development</h3>
+                <p>Creating beautiful, responsive interfaces</p>
+                <div class="skill-list">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Responsive Design</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <span class="skill-icon">🖥️</span>
+                <h3>GUI Development</h3>
+                <p>Desktop application development</p>
+                <div class="skill-list">
+                    <span class="skill-tag">CustomTkinter</span>
+                    <span class="skill-tag">Tkinter</span>
+                    <span class="skill-tag">PIL/Pillow</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <span class="skill-icon">🔧</span>
+                <h3>Tools & Technologies</h3>
+                <p>Modern development environment</p>
+                <div class="skill-list">
+                    <span class="skill-tag">Git/GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">API Integration</span>
+                    <span class="skill-tag">Database Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Innovative solutions showcasing technical expertise and creativity</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">🔐</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">KeyForge Password Manager</h3>
+                    <p class="project-subtitle">Secure, GUI-based password management solution</p>
+                    <p class="project-description">
+                        A fully functional password manager with modern GUI, featuring industry-standard encryption, 
+                        secure authentication, and advanced password generation capabilities.
+                    </p>
+                    <div class="project-features">
+                        <h4>🎯 Key Features:</h4>
+                        <div class="feature-list">
+                            <div class="feature-item">🔑 Bcrypt password hashing</div>
+                            <div class="feature-item">📧 Email OTP recovery</div>
+                            <div class="feature-item">🎲 Advanced password generator</div>
+                            <div class="feature-item">🔍 Real-time search functionality</div>
+                            <div class="feature-item">🌙 Modern dark mode interface</div>
+                            <div class="feature-item">🔒 Fernet symmetric encryption</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-stack">CustomTkinter</span>
+                        <span class="tech-stack">Cryptography</span>
+                        <span class="tech-stack">Bcrypt</span>
+                        <span class="tech-stack">SQLite3</span>
+                        <span class="tech-stack">SMTP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">📝</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">ScrollCraft Text Editor</h3>
+                    <p class="project-subtitle">Feature-rich text editor with modern aesthetics</p>
+                    <p class="project-description">
+                        A powerful text editor with 15 stunning themes, flexible layouts, and smart functionality including 
+                        text-to-speech capabilities and distraction-free writing mode.
+                    </p>
+                    <div class="project-features">
+                        <h4>✨ Highlights:</h4>
+                        <div class="feature-list">
+                            <div class="feature-item">🎨 15 beautiful themes</div>
+                            <div class="feature-item">🌙 Light/Dark mode toggle</div>
+                            <div class="feature-item">🔊 Text-to-Speech integration</div>
+                            <div class="feature-item">📱 5 flexible layout options</div>
+                            <div class="feature-item">📂 Universal file support</div>
+                            <div class="feature-item">🎯 Distraction-free mode</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-stack">CustomTkinter</span>
+                        <span class="tech-stack">Pillow (PIL)</span>
+                        <span class="tech-stack">gTTS</span>
+                        <span class="tech-stack">Tkinter</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">🌤️</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">StormSense Weather App</h3>
+                    <p class="project-subtitle">Real-time weather intelligence application</p>
+                    <p class="project-description">
+                        A sleek weather application providing real-time weather data with accurate forecasting, 
+                        intuitive interface, and fast data retrieval for better weather awareness.
+                    </p>
+                    <div class="project-features">
+                        <h4>🌍 Features:</h4>
+                        <div class="feature-list">
+                            <div class="feature-item">🌍 Real-time weather data</div>
+                            <div class="feature-item">🎯 Accurate forecasting</div>
+                            <div class="feature-item">🎨 Intuitive clean interface</div>
+                            <div class="feature-item">⚡ Fast API data retrieval</div>
+                            <div class="feature-item">📍 Location-based services</div>
+                            <div class="feature-item">📊 Detailed weather metrics</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-stack">Python</span>
+                        <span class="tech-stack">CustomTkinter</span>
+                        <span class="tech-stack">Weather API</span>
+                        <span class="tech-stack">JSON Processing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="section-header">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Ready to collaborate on exciting projects or discuss opportunities</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:gaurav.singh@example.com">gaurav.singh@example.com</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/gaurav-singh-dev" target="_blank">linkedin.com/in/gaurav-singh-dev</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">🐱</div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/gauravsingh" target="_blank">github.com/gauravsingh</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h3>Phone</h3>
+                <a href="tel:+919876543210">+91 98765 43210</a>
+            </div>
+        </div>
+        <div class="resume-download">
+            <a href="#" class="resume-btn">
+                <span>📄</span>
+                Download Resume
+            </a>
+        </div>
+    </section>
+    <script src="{% static 'portfolio/script.js' %}"></script>
+  </body>
+</html> -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaurav Singh - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-inter">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-600">Gaurav Singh</h1>
+      <nav class="space-x-6">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#projects" class="hover:text-blue-600">Projects</a>
+        <a href="#skills" class="hover:text-blue-600">Skills</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 text-center px-6">
+    <div class="max-w-3xl">
+      <h2 class="text-5xl font-bold mb-4 animate-fadeInUp">Hi, I'm Gaurav 👋</h2>
+      <p class="text-lg text-gray-700 mb-6">A beginner full-stack developer passionate about Python, Django, and building modern web apps.</p>
+      <a href="#projects" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-6">About Me</h3>
+    <p class="text-gray-700 leading-relaxed max-w-3xl">
+      I'm a B.Tech student and aspiring developer who loves experimenting with web technologies. 
+      I’ve worked on several beginner-friendly projects in Django, Python, and web development, 
+      and I’m constantly learning to sharpen my skills.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold mb-10 text-center">Projects</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Project Card -->
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+          <img src="{% static 'Portfolio/project1.png' %}" alt="Project 1" class="w-full h-40 object-cover">
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Password Manager</h4>
+            <p class="text-gray-600 mb-4">A secure password manager built with Django & PostgreSQL.</p>
+            <span class="text-sm text-blue-600">Python · Django · PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+          <img src="{% static 'Portfolio/project2.png' %}" alt="Project 2" class="w-full h-40 object-cover">
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">SwapHaven</h4>
+            <p class="text-gray-600 mb-4">A platform to swap skills & resources sustainably.</p>
+            <span class="text-sm text-blue-600">Django · Tailwind · PostgreSQL</span>
+          </div>
+        </div>
+
+        <!-- Add more projects similarly -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold mb-10">Skills</h3>
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+      <div class="p-4 bg-white rounded-lg shadow">🐍 Python</div>
+      <div class="p-4 bg-white rounded-lg shadow">⚡ Django</div>
+      <div class="p-4 bg-white rounded-lg shadow">🌐 HTML</div>
+      <div class="p-4 bg-white rounded-lg shadow">🎨 CSS</div>
+      <div class="p-4 bg-white rounded-lg shadow">💨 Tailwind</div>
+      <div class="p-4 bg-white rounded-lg shadow">🐘 PostgreSQL</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-6">Get In Touch</h3>
+      <p class="text-gray-700 mb-6">Interested in working together or just want to say hi? Feel free to reach out!</p>
+      <a href="mailto:youremail@example.com" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">Email Me</a>
+      <div class="flex justify-center gap-6 mt-6">
+        <a href="https://github.com/yourusername" class="text-gray-600 hover:text-blue-600">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" class="text-gray-600 hover:text-blue-600">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    © 2025 Gaurav Singh. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -9,7 +9,185 @@
       <a href="/" class="block hover:bg-gray-700 px-3 py-2 rounded"><i class="fi fi-rr-home mr-3"></i> All Items</a>
       <a href="/vault" class="block hover:bg-gray-700 px-3 py-2 rounded"><i class="fi fi-rr-trash mr-3"></i> Trash</a>
       <a href="/settings" class="block hover:bg-gray-700 px-3 py-2 rounded"><i class="fi fi-rr-settings mr-3"></i> Settings</a>
-      <a href="/vault" class="block hover:bg-gray-700 px-3 py-2 rounded"><i class="fi fi-br-plus-small"></i> Add</a>
+      <div class="drawer drawer-end">
+        <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content">
+          <label for="my-drawer-4" class="drawer-button btn">Add</label>
+        </div>
+        <div class="drawer-side">
+          <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+          <ul class="menu bg-base-200 text-base-content min-h-full w-180 p-4">
+            <!-- Sidebar content here -->
+          <form method="POST" class="space-y-5">
+            {% csrf_token %}
+            <div>
+              <label for="title" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Title</label>
+              <input type="text" name="title" placeholder="Untitled" class="input w-full" />
+            </div>
+
+            <div>
+              <label for="username" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Username or Email</label>
+              <label class="input validator w-full py-2">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </g>
+                </svg>
+                <input
+                  type="text"
+                  required
+                  placeholder="Username"
+                  pattern="[A-Za-z][A-Za-z0-9\-]*"
+                  minlength="3"
+                  maxlength="30"
+                  title="Only letters, numbers or dash"
+                  name = username
+                />
+              </label>
+
+              <p class="validator-hint hidden">
+                Must be 3 to 30 characters
+                <br />containing only letters, numbers or dash
+              </p>
+            </div>
+
+            <div>
+              <label for="password" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Password</label>
+              <label class="input validator w-full py-2">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path
+                      d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"
+                    ></path>
+                    <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                  </g>
+                </svg>
+                <input
+                  type="password"
+                  name = "password"
+                  required
+                  placeholder="Password"
+                  minlength="8"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+                />
+              </label>
+
+              <p class="validator-hint hidden">
+                Must be more than 8 characters, including
+                <br />At least one number <br />At least one lowercase letter <br />At least one uppercase letter
+              </p>
+            </div>
+
+
+            
+            <div class="drawer">
+              <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+              <div class="drawer-content">
+                <!-- Page content here -->
+                <label for="my-drawer" class="btn bg-[#312C85] drawer-button text-white">Generate Random Password</label>
+              </div>
+              <div class="drawer-side">
+                <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                <ul class="menu bg-base-200 text-base-content min-h-full w-180 p-4">
+                  <!-- Sidebar content here -->
+                  <form method="POST" class="space-y-5">
+                  {% csrf_token %}
+                    <div class="py-5">
+                      <label for="capital" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Capital Letters</label>
+                      <input type="range" min="0" max="100" value="0" class="range range-primary w-full" name="pass_capitals"/>
+                    </div>
+
+                    <div class="py-5">
+                      <label for="small" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Small Letters</label>
+                      <input type="range" min="0" max="100" value="0" class="range range-primary w-full" name="pass_smalls" />
+                    </div>
+
+                    <div class="py-5">
+                      <label for="number" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Numbers</label>
+                      <input type="range" min="0" max="100" value="0" class="range range-primary w-full" names="pass_numbers" />
+                    </div>
+
+                    <div class="py-5">
+                      <label for="symbol" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Symbols</label>
+                      <input type="range" min="0" max="100" value="0" class="range range-primary w-full" name="pass_symbols" />
+                    </div>
+
+                    <div class="py-5">
+                      <button class="btn bg-[#312C85] w-full text-white" >Generate Password</button>
+                    </div>
+                  </form>
+
+                  <div>
+                      <label for="random-pass" class="hidden"></label>
+                    </div>
+
+                  <div>
+                    <button class="btn bg-[#312C85] w-full text-white" >Copy Password</button>
+                  </div>
+                </ul>
+              </div>
+            </div>
+
+
+
+            <div>
+              <label for="url" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Website</label>
+              <label class="input validator w-full py-2">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                  </g>
+                </svg>
+                <input
+                  type="url"
+                  required
+                  placeholder="https://"
+                  value="https://"
+                  pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9\-].*[a-zA-Z0-9])?\.)+[a-zA-Z].*$"
+                  title="Must be valid URL"
+                  name = "url"
+                />
+              </label>
+              <p class="validator-hint hidden">Must be valid URL</p>
+            </div>
+
+            <div>
+              <fieldset class="fieldset w-full">
+                <legend class="fieldset-legend">Notes</legend>
+                <textarea class="textarea h-24 w-full" placeholder="Note" name="note"></textarea>
+                <div class="label">Optional</div>
+              </fieldset>
+            </div>
+
+            <button type="submit"
+              class="w-full py-2 px-4 bg-[#312C85] text-white font-semibold rounded-lg hover:bg-[#251f6d] transition">
+              Add to my inventory
+            </button>
+          </form>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="px-4 py-6 border-t border-gray-700">

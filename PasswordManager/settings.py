@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main.apps.MainConfig',
+    'portfolio.apps.PortfolioConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -127,31 +128,37 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = "login"
+LOGIN_REDIRECT_URL = "app-dashboard"
 
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+# STORAGES = {
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#     },
+# }
 
-DATABASES = {
-    "default": dj_database_url.config(
-        conn_max_age=600,
-        ssl_require=True,
-        default="sqlite:///db.sqlite3", 
-    )
-}
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         conn_max_age=600,
+#         ssl_require=True,
+#         default="sqlite:///db.sqlite3", 
+#     )
+# }
 
-DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+# DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = [
-    ".onrender.com",
-    "localhost",
-    "127.0.0.1",
-]
+# ALLOWED_HOSTS = [
+#     ".onrender.com",
+#     "localhost",
+#     "127.0.0.1",
+# ]
 
+<<<<<<< HEAD
 CSRF_TRUSTED_ORIGINS = [
     "https://*.onrender.com",
 ]
 
+=======
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://*.onrender.com",
+# ]
+>>>>>>> be5511b (Add Login Functionality)

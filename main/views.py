@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import RegisterForm
+from .forms import RegisterForm, PasswordForm
 from django.contrib import messages
 
 def home(request):
@@ -56,4 +56,15 @@ def register(request):
 
 
 def dashboard(request):
-    return render(request, 'main/dashboard.html')
+    if request.method == "POST":
+        form = PasswordForm(request.POST)
+        print(form.errors)
+        if form.is_valid():
+            entry = form.save(commit=False)
+            entry.user = request.user
+            entry.save()
+
+    else:
+        form = PasswordForm()
+
+    return render(request, 'main/dashboard.html', {'form': form})
