@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm, PasswordForm
 from django.contrib import messages
+from .models import VaultEntry
 
 def home(request):
 
@@ -63,8 +64,10 @@ def dashboard(request):
             entry = form.save(commit=False)
             entry.user = request.user
             entry.save()
-
     else:
         form = PasswordForm()
 
-    return render(request, 'main/dashboard.html', {'form': form})
+    entries = VaultEntry.objects.all()
+    
+
+    return render(request, 'main/dashboard.html', {'form': form, 'entries':entries})

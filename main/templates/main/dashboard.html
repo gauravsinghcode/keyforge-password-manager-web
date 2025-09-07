@@ -12,7 +12,7 @@
       <div class="drawer drawer-end">
         <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content">
-          <label for="my-drawer-4" class="drawer-button btn">Add</label>
+          <a class="block hover:bg-gray-700 px-3 py-2 rounded"><label for="my-drawer-4" class="drawer-button"><i class="fi fi-rr-plus mr-3"></i> Add</label></a>
         </div>
         <div class="drawer-side">
           <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
@@ -92,9 +92,51 @@
               </p>
             </div>
 
+            <div>
+              <label for="url" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Website</label>
+              <label class="input validator w-full py-2">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                  </g>
+                </svg>
+                <input
+                  type="url"
+                  required
+                  placeholder="https://"
+                  value="https://"
+                  pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9\-].*[a-zA-Z0-9])?\.)+[a-zA-Z].*$"
+                  title="Must be valid URL"
+                  name = "url"
+                />
+              </label>
+              <p class="validator-hint hidden">Must be valid URL</p>
+            </div>
 
-            
-            <div class="drawer">
+            <div>
+              <fieldset class="fieldset w-full">
+                <legend class="fieldset-legend">Notes</legend>
+                <textarea class="textarea h-24 w-full" placeholder="Note" name="note"></textarea>
+                <div class="label">Optional</div>
+              </fieldset>
+            </div>
+
+            <button type="submit"
+              class="w-full py-2 px-4 bg-[#312C85] text-white font-semibold rounded-lg hover:bg-[#251f6d] transition">
+              Add to my inventory
+            </button>
+          </form>
+
+
+
+          <div class="drawer">
               <input id="my-drawer" type="checkbox" class="drawer-toggle" />
               <div class="drawer-content">
                 <!-- Page content here -->
@@ -144,47 +186,6 @@
 
 
 
-            <div>
-              <label for="url" class="block text-sm font-medium text-gray-700 font-[Inter] py-2">Website</label>
-              <label class="input validator w-full py-2">
-                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <g
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                    stroke-width="2.5"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                  </g>
-                </svg>
-                <input
-                  type="url"
-                  required
-                  placeholder="https://"
-                  value="https://"
-                  pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9\-].*[a-zA-Z0-9])?\.)+[a-zA-Z].*$"
-                  title="Must be valid URL"
-                  name = "url"
-                />
-              </label>
-              <p class="validator-hint hidden">Must be valid URL</p>
-            </div>
-
-            <div>
-              <fieldset class="fieldset w-full">
-                <legend class="fieldset-legend">Notes</legend>
-                <textarea class="textarea h-24 w-full" placeholder="Note" name="note"></textarea>
-                <div class="label">Optional</div>
-              </fieldset>
-            </div>
-
-            <button type="submit"
-              class="w-full py-2 px-4 bg-[#312C85] text-white font-semibold rounded-lg hover:bg-[#251f6d] transition">
-              Add to my inventory
-            </button>
-          </form>
           </ul>
         </div>
       </div>
@@ -201,7 +202,7 @@
 
   </div>
 
-  <div class="overflow-x-auto overflow-x-auto rounded-box border border-base-content/5 bg-base-100 m-3 border-gray-300 w-1/2">
+  <div class="overflow-x-auto overflow-x-auto rounded-box border border-base-content/5 bg-base-100 m-3 border-gray-300 w-full">
     <table class="table">
       <!-- head -->
       <thead>
@@ -220,43 +221,49 @@
         </tr>
       </thead>
       <tbody>
-        <!-- row 1 -->
-        <tr>
-          <th>
-            <!-- <label>
-              <input type="checkbox" class="checkbox" />
-            </label> -->
-          </th>
-          <td>
-            <div class="flex items-center gap-3">
-              <div class="avatar">
-                <div class="mask mask-squircle h-12 w-12">
-                  <!-- <img
-                    src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                    alt="Avatar Tailwind CSS Component" /> -->
-                </div>
+
+        {% for entry in entries %}
+          <tr>
+            <th>
+              <label>
+                <input type="checkbox" class="checkbox" />
+              </label>
+            </th>
+            <td>
+              <div class="flex items-center gap-3">
+                <!-- <div class="avatar">
+                  <div class="mask mask-squircle h-12 w-12">
+                    <img
+                      src="https://img.daisyui.com/images/profile/demo/2@94.webp"
+                      alt="Avatar Tailwind CSS Component" />
+                  </div>
+                </div> -->
+                  <div class="font-bold">{{ entry.title }}</div>
               </div>
-              <div>
-                <!-- <div class="font-bold">Hart Hagerty</div>
-                <div class="text-sm opacity-50">United States</div> -->
-              </div>
-            </div>
-          </td>
-          <!-- <td>
-             Zemlak, Daniel and Leannon
-            <br />
-            <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
-          </td>
-          <td>Purple</td> -->
-          <!-- <th>
-            <button class="btn btn-ghost btn-xs">details</button>
-          </th> -->
-        </tr>
+            </td>
+            <td>
+              <div class="text-sm">{{ entry.username }}</div>
+            </td>
+            <td>
+              <input type="password" value="{{ entry.password }}" disabled class="bg-transparent border-0 text-sm" />
+            </td>
+            <td>
+              <div class="text-sm">{{ entry.created_at }}</div>
+            </td>
+            <td>
+              <div class="text-sm">{{ entry.updated_at }}</div>
+            </td>
+            <td>
+              <button class="btn">Copy</button>
+              <button class="btn">Details</button>
+            </td>
+          </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
 
-  <div class="overflow-x-auto overflow-x-auto rounded-box border border-base-content/5 bg-base-100 m-3 border-gray-300 w-1/3"></div>
+  <!-- <div class="overflow-x-auto overflow-x-auto rounded-box border border-base-content/5 bg-base-100 m-3 border-gray-300 w-1/3"></div> -->
 </div>
 
 {% endblock %}
