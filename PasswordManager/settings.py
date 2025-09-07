@@ -152,13 +152,6 @@ LOGIN_REDIRECT_URL = "app-dashboard"
 #     "127.0.0.1",
 # ]
 
-<<<<<<< HEAD
 CSRF_TRUSTED_ORIGINS = [
     "https://*.onrender.com",
 ]
-
-=======
-# CSRF_TRUSTED_ORIGINS = [
-#     "https://*.onrender.com",
-# ]
->>>>>>> be5511b (Add Login Functionality)
