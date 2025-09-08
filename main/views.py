@@ -67,7 +67,10 @@ def dashboard(request):
     else:
         form = PasswordForm()
 
-    entries = VaultEntry.objects.all()
+    try:
+        entries = VaultEntry.objects.filter(user=request.user)
+    except:
+        entries = ""
     
 
     return render(request, 'main/dashboard.html', {'form': form, 'entries':entries})
